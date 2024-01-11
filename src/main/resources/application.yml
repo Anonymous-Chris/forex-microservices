@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: forex-service
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+#  https://stackoverflow.com/questions/57195882/cannot-insert-data-in-h2-in-memory-database
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+  h2:
+    console:
+      enabled: true
+server:
+    port: 8000
